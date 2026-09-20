@@ -1,17 +1,17 @@
 # Журнал экспериментов Практики 2
 
-- Выбранный слабый артефакт Практики 1:
-- Что в нём нужно улучшить:
-- Как поймём, что изменение полезно:
+- Выбранный слабый артефакт Практики 1: ADR (`practices/practice_01/adr.md`)
+- Что в нём нужно улучшить: Зафиксировать статус (accepted), добавить ≥3 альтернативы с trade-offs; явно покрыть OBS-1 (логирование) и стратегию ошибок (маппинг LLM→HTTP, таймаут/ретраи, circuit breaker); выбрать sync/async и целевую версию Python; уточнить интерфейс LLM-адаптера и риски с проверками.
+- Как поймём, что изменение полезно: ADR содержит перечисленные разделы и ссылки на правила SEC-1/API-1/REL-1/OUT-1/OBS-1; добавлена таблица маппинга ошибок и выбор async/sync; проходят новые интеграционные тесты на OBS-1 и маппинг ошибок; на ревью исчезают двусмысленности.
 
 | Техника | Файл эксперимента | Изменённый файл Практики 1 | Конкретное изменение | Проверка | Что отклонили |
 |---|---|---|---|---|---|
-| Few-shot | [`few_shot/experiment.md`](few_shot/experiment.md) |  |  |  |  |
-| R.C.T.F. | [`rctf/experiment.md`](rctf/experiment.md) |  |  |  |  |
-| Chain of Verification | [`chain_of_verification/experiment.md`](chain_of_verification/experiment.md) |  |  |  |  |
-| Tree of Thoughts | [`tree_of_thoughts/experiment.md`](tree_of_thoughts/experiment.md) |  |  |  |  |
-| RAG | [`rag/experiment.md`](rag/experiment.md) |  |  |  |  |
-| ReAct | [`react/experiment.md`](react/experiment.md) |  |  |  |  |
+| Few-shot | [`few_shot/experiment.md`](few_shot/experiment.md) | `practices/practice_01/adr.md` | Статус accepted; добавлены альтернативы, маппинг LLM→HTTP, OBS-1 логирование, интерфейс адаптера, выбор async/Python 3.10 | Наличие всех секций и таблиц; согласование с SEC-1/API-1/REL-1/OUT-1/OBS-1 | Полное логирование prompt/response; делегирование предобработки клиенту |
+| R.C.T.F. | [`rctf/experiment.md`](rctf/experiment.md) | `practices/practice_01/tests_integration.md` | Расширена таблица сценариев: успех по OUT-1; 422 (нет diff, неверный тип); 413 (>20k); 504/502/500 по ADR; OBS-1 проверки логов; отсутствие вызова LLM при 422/413 | Наличие точных кодов и тел; шаги воспроизведения с заглушкой LLM; соответствие ADR и правилам OUT-1/API-1/REL-1/OBS-1 | Размытые формулировки «контролируемый 5xx»; сценарии вне первого рабочего сценария |
+| Chain of Verification | [`chain_of_verification/experiment.md`](chain_of_verification/experiment.md) | `practices/practice_01/tests_e2e.md` | Добавлены недостающие E2E-сценарии: 422 (нет/неверный diff), граничные 20k/20001, 504/502/500, OBS-1 логирование | Таблица вопросов и evidence; обновлённые E2E соответствуют ADR и OUT-1/API-1/REL-1/OBS-1 | Двусмысленные формулировки без точных кодов/тел; сценарии вне первого рабочего сценария |
+| Tree of Thoughts | [`tree_of_thoughts/experiment.md`](tree_of_thoughts/experiment.md) | `practices/practice_01/tests_unit.md` | Расширен юнит-набор: SEC-1 позитив/негатив/идемпотентность; API-1 20k/20001/пустой; OUT-1 структура и обрезание risks ≤3; REL-1 таймаут и retry x3 с jitter; классификация/маппинг ошибок; OBS-1 политика логирования; async-инварианты адаптера | Сопоставление с ADR и правилами; наличие позитивных/негативных кейсов; детерминизм jitter/clock; отсутствие флаки | Минимальный инкремент (покрыть только OUT-1/OBS-1); монолитную матрицу без модульности |
+| RAG | [`rag/experiment.md`](rag/experiment.md) | `practices/practice_01/tests_load.md` | Расширены нагрузочные сценарии: baseline/stress/spike; fast-path 422/413; ретраи ≤x3; маппинг 504/502; OBS-1 под нагрузкой; OUT-1 валидация; метрики CPU/RSS | Сопоставление с ADR и OUT-1/API-1/REL-1/OBS-1; product_management.md; tests_integration.md/tests_e2e.md; наличие SLO p95/p99 и счётчиков LLM | Внешние неподтверждённые SLO и сценарии вне первого рабочего сценария |
+| ReAct | [`react/experiment.md`](react/experiment.md) | `practices/practice_01/project_management.md` | Добавлены Exit Criteria по инкрементам, Definition of Done, RACI, реестр рисков и мер, Feature Flags/rollback и Gates | Сопоставление с ADR и правилами OUT-1/API-1/REL-1/OBS-1; проверка соответствия тестовым сьютам Unit/Integration/E2E/Load | Неподтверждённые задачи вне первого рабочего сценария; расплывчатые формулировки без проверок |
 
 ## Независимое ревью
 
