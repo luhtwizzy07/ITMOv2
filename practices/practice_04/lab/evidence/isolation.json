@@ -1,0 +1,16 @@
+{
+  "primary": {
+    "directory": "/Users/luhtwizzy/ITMO_SE/26-27/Autumn/Vibecoding/ITMOv2/practices/practice_04/lab",
+    "branch": "codex/practice-04",
+    "head": "1b46f8452644fb270bee6217b35c9a499adee2c9",
+    "has_unsubscribe": false
+  },
+  "worktree_b": {
+    "directory": "/Users/luhtwizzy/.codex/worktrees/practice04-b/ITMOv2/practices/practice_04/lab",
+    "branch": "codex/practice-04-b",
+    "head_before_b_commit": "1b46f8452644fb270bee6217b35c9a499adee2c9",
+    "has_unsubscribe": true
+  },
+  "independent_python_environments": true,
+  "feature_b_tests_unchanged": true
+}
