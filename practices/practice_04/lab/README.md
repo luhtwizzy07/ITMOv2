@@ -18,20 +18,17 @@ make mcp-proof
 
 Код сервиса использует только стандартную библиотеку. `requirements.txt`
 устанавливает официальный MCP SDK для MCP-сервера и интеграционных проверок.
-API key не нужен. Для запуска сохранённых запросов OpenCode нужен доступный
-в Ollama `itmo-agent`; модель можно создать по материалам практики №3:
+Создать модель:
 
 ```sh
-# из корня учебного репозитория
+# из корня
 ollama create itmo-agent -f practices/practice_03/lab/Modelfile.agent
 cd practices/practice_04/lab
 opencode mcp list
 opencode --agent build
 ```
 
-Здесь поддерживается **OpenCode 1.18.31**. Слайды используют 2.0.20:
-конфигурация MCP и hook намеренно адаптированы к установленной версии.
-Для этого проекта MCP находится непосредственно в `mcp.notify_checks`,
+MCP находится непосредственно в `mcp.notify_checks`,
 а hook использует `tool.execute.after`. Не переносить этот конфиг в 2.x
 без миграции. Статус MCP connected ещё не доказывает вызов инструмента.
 
