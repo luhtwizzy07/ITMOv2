@@ -1,0 +1,113 @@
+{
+  "server": {
+    "name": "notify-checks",
+    "title": null,
+    "version": "1.30.0",
+    "websiteUrl": null,
+    "icons": null
+  },
+  "protocol": "2025-11-25",
+  "tools": [
+    {
+      "name": "project_check",
+      "title": null,
+      "description": "Run Notify Mini checks: baseline, a (listing), b (unsubscribe), or all.\n\nReturns status, exit_code and actual output. Unknown profiles are tool errors;\nfailed tests return FAIL. No command or path input is accepted.\n",
+      "inputSchema": {
+        "properties": {
+          "profile": {
+            "default": "all",
+            "title": "Profile",
+            "type": "string"
+          }
+        },
+        "title": "project_checkArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "additionalProperties": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "integer"
+            }
+          ]
+        },
+        "title": "project_checkDictOutput",
+        "type": "object"
+      },
+      "icons": null,
+      "annotations": {
+        "title": null,
+        "readOnlyHint": true,
+        "destructiveHint": null,
+        "idempotentHint": null,
+        "openWorldHint": false
+      },
+      "meta": null,
+      "execution": null
+    }
+  ],
+  "calls": [
+    {
+      "arguments": {
+        "profile": "baseline"
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"profile\": \"baseline\",\n  \"status\": \"PASS\",\n  \"exit_code\": 0,\n  \"output\": \"CHECK baseline: PASS\\ntest_duplicate (test_baseline.SubscribeTest.test_duplicate) ... ok\\ntest_empty (test_baseline.SubscribeTest.test_empty) ... ok\\ntest_subscribe (test_baseline.SubscribeTest.test_subscribe) ... ok\\ntest_trim (test_baseline.SubscribeTest.test_trim) ... ok\\n\\n----------------------------------------------------------------------\\nRan 4 tests in 0.000s\\n\\nOK\\n\"\n}",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "profile": "baseline",
+          "status": "PASS",
+          "exit_code": 0,
+          "output": "CHECK baseline: PASS\ntest_duplicate (test_baseline.SubscribeTest.test_duplicate) ... ok\ntest_empty (test_baseline.SubscribeTest.test_empty) ... ok\ntest_subscribe (test_baseline.SubscribeTest.test_subscribe) ... ok\ntest_trim (test_baseline.SubscribeTest.test_trim) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+        },
+        "isError": false
+      }
+    },
+    {
+      "arguments": {
+        "profile": "not-a-profile"
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool project_check: unknown profile 'not-a-profile'; choose baseline, a, b or all",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true
+      }
+    },
+    {
+      "arguments": {
+        "profile": 42
+      },
+      "result": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool project_check: 1 validation error for project_checkArguments\nprofile\n  Input should be a valid string [type=string_type, input_value=42, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_type",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": null,
+        "isError": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+sh scripts/check.sh all
+test_duplicate (test_baseline.SubscribeTest.test_duplicate) ... ok
+test_empty (test_baseline.SubscribeTest.test_empty) ... ok
+test_subscribe (test_baseline.SubscribeTest.test_subscribe) ... ok
+test_trim (test_baseline.SubscribeTest.test_trim) ... ok
+test_case_sensitive_order (test_list.ListSubscribersTest.test_case_sensitive_order) ... ok
+test_empty (test_list.ListSubscribersTest.test_empty) ... ok
+test_returned_list_does_not_mutate_storage (test_list.ListSubscribersTest.test_returned_list_does_not_mutate_storage) ... ok
+test_snapshot_and_later_subscription (test_list.ListSubscribersTest.test_snapshot_and_later_subscription) ... ok
+test_sorted_trimmed_unique (test_list.ListSubscribersTest.test_sorted_trimmed_unique) ... ok
+test_green_requires_passing_feature_tests (test_skill.SkillGateTest.test_green_requires_passing_feature_tests) ... ok
+test_red_accepts_a_real_assertion_failure (test_skill.SkillGateTest.test_red_accepts_a_real_assertion_failure) ... ok
+test_red_rejects_broken_baseline (test_skill.SkillGateTest.test_red_rejects_broken_baseline) ... ok
+test_red_rejects_import_errors (test_skill.SkillGateTest.test_red_rejects_import_errors) ... ok
+test_red_rejects_skipped_tests (test_skill.SkillGateTest.test_red_rejects_skipped_tests) ... ok
+test_red_rejects_zero_tests (test_skill.SkillGateTest.test_red_rejects_zero_tests) ... ok
+test_real_stdio_success_and_invalid_input (test_tools.CheckToolTest.test_real_stdio_success_and_invalid_input) ... Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+ok
+test_test_failure_is_not_reported_as_pass (test_tools.CheckToolTest.test_test_failure_is_not_reported_as_pass) ... ok
+test_timeout_is_an_explicit_error (test_tools.CheckToolTest.test_timeout_is_an_explicit_error) ... ok
+test_unknown_profile_does_not_launch_a_command (test_tools.CheckToolTest.test_unknown_profile_does_not_launch_a_command) ... ok
+test_empty_name_preserves_state (test_unsubscribe.UnsubscribeTest.test_empty_name_preserves_state) ... ok
+test_existing_name (test_unsubscribe.UnsubscribeTest.test_existing_name) ... ok
+test_missing_name (test_unsubscribe.UnsubscribeTest.test_missing_name) ... ok
+test_names_remain_case_sensitive (test_unsubscribe.UnsubscribeTest.test_names_remain_case_sensitive) ... ok
+test_other_subscribers_are_preserved (test_unsubscribe.UnsubscribeTest.test_other_subscribers_are_preserved) ... ok
+test_repeated_removal (test_unsubscribe.UnsubscribeTest.test_repeated_removal) ... ok
+test_subscribe_after_removal (test_unsubscribe.UnsubscribeTest.test_subscribe_after_removal) ... ok
+test_trimmed_name (test_unsubscribe.UnsubscribeTest.test_trimmed_name) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.559s
+
+OK
+CHECK all: PASS

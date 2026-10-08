@@ -1,0 +1,21 @@
+{
+  "phase": "green",
+  "feature": "b",
+  "accepted": true,
+  "baseline": {
+    "tests": 4,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true,
+    "output": "test_duplicate (test_baseline.SubscribeTest.test_duplicate) ... ok\ntest_empty (test_baseline.SubscribeTest.test_empty) ... ok\ntest_subscribe (test_baseline.SubscribeTest.test_subscribe) ... ok\ntest_trim (test_baseline.SubscribeTest.test_trim) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+  },
+  "feature_suite": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "successful": true,
+    "output": "test_empty_name_preserves_state (test_unsubscribe.UnsubscribeTest.test_empty_name_preserves_state) ... ok\ntest_existing_name (test_unsubscribe.UnsubscribeTest.test_existing_name) ... ok\ntest_missing_name (test_unsubscribe.UnsubscribeTest.test_missing_name) ... ok\ntest_names_remain_case_sensitive (test_unsubscribe.UnsubscribeTest.test_names_remain_case_sensitive) ... ok\ntest_other_subscribers_are_preserved (test_unsubscribe.UnsubscribeTest.test_other_subscribers_are_preserved) ... ok\ntest_repeated_removal (test_unsubscribe.UnsubscribeTest.test_repeated_removal) ... ok\ntest_subscribe_after_removal (test_unsubscribe.UnsubscribeTest.test_subscribe_after_removal) ... ok\ntest_trimmed_name (test_unsubscribe.UnsubscribeTest.test_trimmed_name) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.000s\n\nOK\n"
+  }
+}

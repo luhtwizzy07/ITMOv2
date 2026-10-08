@@ -1,0 +1,7 @@
+.venv/
+.opencode/node_modules/
+.opencode/package.json
+.opencode/bun.lock
+.opencode/bun.lockb
+.opencode/package-lock.json
+!opencode.json
