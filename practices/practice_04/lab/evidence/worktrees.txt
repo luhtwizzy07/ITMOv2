@@ -1,0 +1,7 @@
+worktree /Users/luhtwizzy/ITMO_SE/26-27/Autumn/Vibecoding/ITMOv2
+HEAD 0f742328f77cc81796ef5e20fb6884f0c3acd9fe
+branch refs/heads/codex/practice-04
+
+worktree /Users/luhtwizzy/.codex/worktrees/practice04-b/ITMOv2
+HEAD 0f742328f77cc81796ef5e20fb6884f0c3acd9fe
+branch refs/heads/codex/practice-04-b

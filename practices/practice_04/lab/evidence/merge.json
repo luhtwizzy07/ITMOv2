@@ -1,0 +1,9 @@
+{
+  "command": "git merge --ff-only codex/practice-04-b",
+  "primary_before": "1b46f8452644fb270bee6217b35c9a499adee2c9",
+  "primary_after": "a391a5b635051c4d9dc0d5c9979f9fd50e5dfa75",
+  "b_head": "a391a5b635051c4d9dc0d5c9979f9fd50e5dfa75",
+  "previous_head_is_ancestor": true,
+  "primary_matches_b": true,
+  "primary_branch": "codex/practice-04"
+}
